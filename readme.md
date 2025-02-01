@@ -3,14 +3,42 @@
 ## Project Overview
 This project is an AI-based cryptocurrency trading bot, aiming to learn and share the application of AI in the trading field through a simulated trading environment. Please note that this project is only for learning and research purposes and is not recommended for actual trading.
 
-## Project Structure
-- **Valuation Agent**: Responsible for evaluating the value of cryptocurrencies.
-- **Sentiment Agent**: Analyzes market sentiment and news data.
-- **Fundamentals Agent**: Researches the fundamentals of cryptocurrencies.
-- **Technical Analyst**: Performs technical analysis.
-- **Risk Manager**: Manages trading risks.
-- **Portfolio Manager**: Manages the investment portfolio.
-- **Trading Manager**: Executes trading decisions.
+
+## AI Agent Architecture
+
+The system consists of multiple AI agents, each responsible for a specific aspect of trading:
+
+### **Valuation Agent (LLM + RL)**
+- **Task:** Evaluates the intrinsic value of cryptocurrencies.
+- **Interaction:** Queries the Fundamentals Agent and Sentiment Agent for supporting data.
+
+### **Sentiment Agent**
+- **Task:** Extracts market sentiment from financial news, Twitter, Reddit, and forums.
+- **Interaction:** Engages with exchanges and the Valuation Agent for insights.
+
+### **Fundamentals Agent (LLM-Based Information Retriever)**
+- **Task:** Analyzes project fundamentals, tokenomics, GitHub activity, and governance.
+- **Interaction:** Provides insights to the Sentiment and Valuation Agents.
+
+### **Technical Analyst (LLM + RL)**
+- **Task:** Uses technical indicators and chart patterns for decision-making.
+- **Interaction:** Communicates with the Portfolio and Risk Agents.
+
+### **Risk Manager (RL-Based Adaptive Risk Control)**
+- **Task:** Dynamically manages exposure based on market conditions.
+- **Interaction:** Receives input from the Portfolio Manager and Technical Analyst to optimize risk-adjusted returns.
+
+### **Portfolio Manager (LLM + RL)**
+- **Task:** Allocates capital to optimize returns while managing risk.
+- **Interaction:** Adjusts allocation based on feedback from the Risk Manager and Trading Manager.
+
+### **Trading Manager (RL-Based Execution Optimization)**
+- **Task:** Executes trades on exchanges with optimal order placement strategies.
+- **Interaction:** Works with the Portfolio Manager and Risk Manager to ensure efficient execution.
+
+## AI Agent Architecture Diagram
+![Trading Bot Screenshot](fig/framework.png)
+
 
 Based on the project overview you provided, here is a possible project structure example:
 
